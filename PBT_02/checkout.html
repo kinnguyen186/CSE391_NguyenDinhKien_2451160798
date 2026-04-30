@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nguyễn Đình Kiên</title>
+  </head>
+  <body>
+    <header>
+      <h1>Form đặt hàng</h1>
+      <nav>
+        <a href="#gio_hang">Giỏ hàng</a>
+        <a href="#thanh_toan">Form thanh toán</a>
+      </nav>
+    </header>
+
+    <main>
+      <h2>Thông tin giỏ hàng</h2>
+
+      <label for="tim_sp">Tìm nhanh sản phẩm:</label>
+      <input list="ds_san_pham" id="tim_sp" name="tim_sp" />
+      <datalist id="ds_san_pham">
+        <option value="Samsung Galaxy S24 Ultra"></option>
+        <option value="Laptop Lenovo Legion Slim 5"></option>
+        <option value="Tai nghe Sony WH-1000XM5"></option>
+        <option value="Apple Watch Series 10"></option>
+      </datalist>
+
+      <section id="gio_hang">
+        <table border="1" cellspacing="0" cellpadding="1">
+          <thead>
+            <tr>
+              <th>STT</th>
+              <th>Sản phẩm</th>
+              <th>Đơn giá</th>
+              <th>Số lượng</th>
+              <th>Thành tiền</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Samsung Galaxy S24 Ultra</td>
+              <td>26.990.000đ</td>
+              <td>1</td>
+              <td>26.990.000đ</td>
+            </tr>
+
+            <tr>
+              <td>2</td>
+              <td>Laptop Lenovo Legion Slim 5</td>
+              <td>31.490.000đ</td>
+              <td>1</td>
+              <td>31.490.000đ</td>
+            </tr>
+
+            <tr>
+              <td>3</td>
+              <td>Tai nghe Sony WH-1000XM5</td>
+              <td>6.990.000đ</td>
+              <td>2</td>
+              <td>13.980.000đ</td>
+            </tr>
+          </tbody>
+
+          <tfoot>
+            <tr>
+              <td colspan="3">Tổng cộng</td>
+              <td>4</td>
+              <td>
+                <output name="tong_tien">72.460.000đ</output>
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+      </section>
+
+      <section id="thanh_toan">
+        <h2>Form thanh toán</h2>
+        <form action="#">
+          <input type="radio" name="phuong_thuc" id="cod" value="cod" />
+          <label for="cod">COD</label>
+
+          <input
+            type="radio"
+            name="phuong_thuc"
+            id="chuyen_khoan"
+            value="chuyen_khoan"
+          />
+          <label for="chuyen_khoan">Chuyển khoản</label>
+
+          <input
+            type="radio"
+            name="phuong_thuc"
+            id="vi_dien_tu"
+            value="vi_dien_tu"
+          />
+          <label for="vi_dien_tu">Ví điện tử</label>
+
+          <br /><br />
+          <label for="coupon">Mã giảm giá</label>
+          <input type="text" name="coupon" id="coupon" pattern="SALE[0-9]{4}" />
+
+          <label for="note">Ghi chú</label>
+          <textarea name="note" id="note"></textarea>
+
+          <h2>Thông tin giao hàng</h2>
+
+          <label for="ngay_giao_hang">Ngày giao hàng</label>
+          <input
+            type="date"
+            name="ngay_giao_hang"
+            id="ngay_giao_hang"
+            min="2026-04-29"
+          />
+
+          <label for="khung_gio">Khung giờ</label>
+          <select name="khung_gio" id="khung_gio">
+            <option value="sang">Sáng 8-12h</option>
+            <option value="chieu">Chiều 14-18h</option>
+            <option value="toi">Tối 18-21h</option>
+          </select>
+
+          <label for="thoi_gian">Thời gian giao hàng</label>
+          <input
+            type="range"
+            name="thoi_gian"
+            id="thoi_gian"
+            min="1"
+            max="7"
+            step="1"
+          />
+
+          <br /><br />
+          <label for="diem">Điểm tích lũy:</label>
+          <meter
+            id="diem"
+            value="70"
+            min="0"
+            max="100"
+            low="30"
+            high="80"
+            optimum="90"
+          ></meter>
+          <span>70%</span>
+
+          <br /><br />
+          <button type="submit" aria-label="Xác nhận đặt hàng">Đặt hàng</button>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
