@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Cửa hàng</h1>
+
+    <svg width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+      <rect width="80" height="80" rx="12" fill="#F5F5F5" />
+      <circle cx="40" cy="40" r="20" fill="#BC002D" />
+    </svg>
+    <nav>
+      <a href="#top">Sản phẩm nổi bật</a>
+      <a href="#video_gioi_thieu">Video giới thiệu</a>
+      <a href="#video_san_pham">Video sản phẩm</a>
+      <a href="#nhac_nen">Nhạc nền</a>
+    </nav>
+
+    <section id="top">
+      <h2>Sản phẩm nổi bật</h2>
+      <figure>
+        <img
+          src="https://placehold.co/200x150"
+          alt="Samsung Galaxy S24 Ultra màu xám Titanium"
+          loading="lazy"
+        />
+        <figcaption>Samsung Galaxy S24 Ultra — 26.990.000đ</figcaption>
+      </figure>
+
+      <figure>
+        <img
+          src="https://placehold.co/200x150"
+          alt="Laptop Lenovo Legion Slim 5 thiết kế gaming hiện đại"
+          loading="lazy"
+        />
+        <figcaption>Laptop Lenovo Legion Slim 5 — 31.490.000đ</figcaption>
+      </figure>
+
+      <figure>
+        <img
+          src="https://placehold.co/200x150"
+          alt="Tai nghe Sony WH-1000XM5 màu đen nhám"
+          loading="lazy"
+        />
+        <figcaption>Tai nghe Sony WH-1000XM5 — 6.990.000đ</figcaption>
+      </figure>
+    </section>
+
+    <section id="video_gioi_thieu">
+      <h2>Video giới thiệu</h2>
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/3i1OB6wKYms?si=2TjEXKxQqpE7Gs7b" 
+        title="YouTube video player"
+        frameborder="0"
+        allow="
+          accelerometer;
+          autoplay;
+          clipboard-write;
+          encrypted-media;
+          gyroscope;
+          picture-in-picture;
+          web-share;
+        "
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
+    </section>
+
+    <section id="video_san_pham">
+      <h2>Video về sản phẩm</h2>
+      <video
+        controls
+        poster="https://placehold.co/640x360"
+        style="max-width: 100%; height: auto"
+      >
+        <source src="samsung-s24-ultra-intro.mp4" type="video/mp4" />
+        <source src="samsung-s24-ultra-intro.webm" type="video/webm" />
+        Trình duyệt của bạn không hỗ trợ thẻ video.
+      </video>
+    </section>
+
+    <section id="nhac_nen">
+      <h2>Nhạc nền</h2>
+      <audio controls>
+        <source src="background-music.mp3" type="audio/mpeg" />
+        <source src="background-music.ogg" type="audio/ogg" />
+        Trình duyệt của bạn không hỗ trợ thẻ audio.
+      </audio>
+    </section>
+  </body>
+</html>
