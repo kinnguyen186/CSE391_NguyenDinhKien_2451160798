@@ -1,0 +1,36 @@
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-image img {
+  border-radius: 50%;
+  border: 5px solid var(--color-primary);
+
+  box-shadow: var(--shadow);
+}
+
+.about-text {
+  background: var(--bg-card);
+  padding: 40px;
+  border-radius: var(--radius);
+}
+
+.about-text h2 {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.lead {
+  color: var(--color-primary);
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}
