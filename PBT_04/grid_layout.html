@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid Layout — E-Commerce</title>
+    <link rel="stylesheet" href="grid.css" />
+  </head>
+  <body>
+    <div class="layout">
+      <!-- HEADER -->
+      <header class="header">
+        <strong>🛒 ShopDemo</strong>
+        <nav>
+          <a href="#">Trang chủ</a>
+          <a href="#">Sản phẩm</a>
+          <a href="#">Liên hệ</a>
+        </nav>
+      </header>
+
+      <!-- HERO BANNER -->
+      <section class="hero">
+        <div class="hero__text">
+          <h1>Siêu sale tháng 5 🔥</h1>
+          <p>Giảm đến 50% cho tất cả sản phẩm</p>
+          <a href="#">Mua ngay</a>
+        </div>
+        <!-- Card nổi bật: grid-column span 2 đã được dùng cho hero__text -->
+        <div class="hero__card">
+          <div class="emoji">📱</div>
+          <h3>iPhone 15 Pro Max</h3>
+          <div class="price">28.990.000đ</div>
+        </div>
+      </section>
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <h3>Bộ lọc</h3>
+        <div class="filter-group">
+          <h4>Danh mục</h4>
+          <label><input type="checkbox" checked /> Điện thoại</label>
+          <label><input type="checkbox" checked /> Laptop</label>
+          <label><input type="checkbox" /> Đồng hồ</label>
+          <label><input type="checkbox" /> Phụ kiện</label>
+        </div>
+        <div class="filter-group">
+          <h4>Giá</h4>
+          <label><input type="checkbox" /> Dưới 5 triệu</label>
+          <label><input type="checkbox" checked /> 5 – 20 triệu</label>
+          <label><input type="checkbox" /> Trên 20 triệu</label>
+        </div>
+        <div class="filter-group">
+          <h4>Thương hiệu</h4>
+          <label><input type="checkbox" checked /> Apple</label>
+          <label><input type="checkbox" /> Samsung</label>
+          <label><input type="checkbox" /> Sony</label>
+        </div>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <main class="main">
+        <h2>Sản phẩm</h2>
+        <div class="product-grid">
+          <div class="card">
+            <div class="card__img">📱</div>
+            <div class="card__body">
+              <div class="card__name">iPhone 15 Pro</div>
+              <div class="card__price">28.990.000đ</div>
+              <div class="card__btn"><button>Mua ngay</button></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card__img">💻</div>
+            <div class="card__body">
+              <div class="card__name">MacBook Air M3</div>
+              <div class="card__price">32.990.000đ</div>
+              <div class="card__btn"><button>Mua ngay</button></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card__img">🎧</div>
+            <div class="card__body">
+              <div class="card__name">AirPods Pro</div>
+              <div class="card__price">6.490.000đ</div>
+              <div class="card__btn"><button>Mua ngay</button></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card__img">⌚</div>
+            <div class="card__body">
+              <div class="card__name">Apple Watch S9</div>
+              <div class="card__price">11.990.000đ</div>
+              <div class="card__btn"><button>Mua ngay</button></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card__img">📷</div>
+            <div class="card__body">
+              <div class="card__name">Sony A7 IV</div>
+              <div class="card__price">68.000.000đ</div>
+              <div class="card__btn"><button>Mua ngay</button></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card__img">🖥️</div>
+            <div class="card__body">
+              <div class="card__name">Dell Monitor 27"</div>
+              <div class="card__price">8.500.000đ</div>
+              <div class="card__btn"><button>Mua ngay</button></div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- ADS -->
+      <aside class="ads">
+        <div class="ads__banner">
+          <img src="https://placehold.co/200x120?text=Quang+cao+1" alt="Quảng cáo 1" />
+        </div>
+        <div class="ads__banner">
+          <img src="https://placehold.co/200x120?text=Quang+cao+2" alt="Quảng cáo 2" />
+        </div>
+        <div class="ads__banner">
+          <img src="https://placehold.co/200x120?text=Quang+cao+3" alt="Quảng cáo 3" />
+        </div>
+      </aside>
+
+      <!-- FOOTER -->
+      <footer class="footer">© 2025 ShopDemo. All rights reserved.</footer>
+    </div>
+  </body>
+</html>
