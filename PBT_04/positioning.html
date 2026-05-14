@@ -3,65 +3,156 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CSS Positioning Demo</title>
+    <title>FoodNow Positioning</title>
+
     <link rel="stylesheet" href="positioning.css" />
   </head>
+
   <body>
-    <!-- 1. Fixed Header -->
+
+    <!-- HEADER -->
     <header class="header">
-      <div class="logo">ShopTĐ</div>
-      <nav>
+
+      <div class="logo">
+        FoodNow 🍔
+      </div>
+
+      <nav class="nav">
         <a href="#">Trang chủ</a>
-        <a href="#">Sản phẩm</a>
+        <a href="#">Món ăn</a>
         <a href="#">Liên hệ</a>
       </nav>
+
     </header>
 
-    <div class="page">
-      <!-- 2. Sticky Sidebar -->
+    <!-- LAYOUT -->
+    <div class="layout">
+
+      <!-- SIDEBAR -->
       <aside class="sidebar">
-        <strong>Danh mục</strong>
+
+        <h3>Danh mục món ăn</h3>
+
         <ul>
-          <li>Điện thoại</li>
-          <li>Laptop</li>
-          <li>Đồng hồ</li>
-          <li>Phụ kiện</li>
+          <li>🍕 Pizza</li>
+          <li>🍔 Burger</li>
+          <li>🍣 Sushi</li>
+          <li>🍜 Mì Ramen</li>
+          <li>🧋 Trà sữa</li>
         </ul>
+
       </aside>
 
-      <!-- Main content -->
+      <!-- MAIN -->
       <main class="main">
-        <!-- 3. Product cards với badge HOT -->
+
+        <h1>Món bán chạy 🔥</h1>
+
+        <!-- PRODUCT GRID -->
         <div class="product-grid">
+
+          <!-- CARD -->
           <div class="card">
-            <div class="card__badge">HOT</div>
-            <div class="card__name">iPhone 15 Pro</div>
-            <div class="card__price">28.990.000đ</div>
+
+            <div class="badge">
+              HOT
+            </div>
+
+            <div class="emoji">
+              🍕
+            </div>
+
+            <h2>Pizza Hải Sản</h2>
+
+            <p>189.000đ</p>
+
           </div>
 
+          <!-- CARD -->
           <div class="card">
-            <div class="card__badge">HOT</div>
-            <div class="card__name">MacBook Air M3</div>
-            <div class="card__price">32.990.000đ</div>
+
+            <div class="badge">
+              HOT
+            </div>
+
+            <div class="emoji">
+              🍔
+            </div>
+
+            <h2>Burger Bò</h2>
+
+            <p>99.000đ</p>
+
           </div>
 
+          <!-- CARD -->
           <div class="card">
-            <div class="card__badge">HOT</div>
-            <div class="card__name">AirPods Pro</div>
-            <div class="card__price">6.490.000đ</div>
+
+            <div class="badge">
+              HOT
+            </div>
+
+            <div class="emoji">
+              🍣
+            </div>
+
+            <h2>Sushi Cá Hồi</h2>
+
+            <p>220.000đ</p>
+
           </div>
+
         </div>
 
-        <div class="extra">
-          <p>Nội dung ví dụ để chứng minh sticky</p>
-          <p>Nội dung ví dụ để chứng minh sticky</p>
-          <p>Nội dung ví dụ để chứng minh sticky</p>
-          <p>Nội dung ví dụ để chứng minh sticky</p>
+        <!-- SCROLL CONTENT -->
+        <div class="demo-scroll">
+
+          <p>FoodNow giao hàng siêu tốc 🚀</p>
+          <p>Pizza đang giảm giá cực mạnh 🔥</p>
+          <p>Burger bò phô mai bán chạy nhất tuần.</p>
+          <p>Miễn phí ship cho đơn từ 99k.</p>
+          <p>Combo gia đình tiết kiệm hơn 30%.</p>
+          <p>Đồ ăn luôn được chuẩn bị nóng hổi.</p>
+          <p>FoodNow hoạt động 24/7.</p>
+          <p>Sushi cá hồi nhập khẩu tươi ngon.</p>
+          <p>Khuyến mãi cuối tuần cực lớn.</p>
+          <p>Đặt món ngay để nhận ưu đãi.</p>
+          <p>FoodNow xin cảm ơn quý khách ❤️</p>
+
+          <p>FoodNow giao hàng siêu tốc 🚀</p>
+          <p>Pizza đang giảm giá cực mạnh 🔥</p>
+          <p>Burger bò phô mai bán chạy nhất tuần.</p>
+          <p>Miễn phí ship cho đơn từ 99k.</p>
+          <p>Combo gia đình tiết kiệm hơn 30%.</p>
+          <p>Đồ ăn luôn được chuẩn bị nóng hổi.</p>
+          <p>FoodNow hoạt động 24/7.</p>
+          <p>Sushi cá hồi nhập khẩu tươi ngon.</p>
+          <p>Khuyến mãi cuối tuần cực lớn.</p>
+          <p>Đặt món ngay để nhận ưu đãi.</p>
+          <p>FoodNow xin cảm ơn quý khách ❤️</p>
+
+          <p>FoodNow giao hàng siêu tốc 🚀</p>
+          <p>Pizza đang giảm giá cực mạnh 🔥</p>
+          <p>Burger bò phô mai bán chạy nhất tuần.</p>
+          <p>Miễn phí ship cho đơn từ 99k.</p>
+          <p>Combo gia đình tiết kiệm hơn 30%.</p>
+          <p>Đồ ăn luôn được chuẩn bị nóng hổi.</p>
+          <p>FoodNow hoạt động 24/7.</p>
+          <p>Sushi cá hồi nhập khẩu tươi ngon.</p>
+          <p>Khuyến mãi cuối tuần cực lớn.</p>
+          <p>Đặt món ngay để nhận ưu đãi.</p>
+          <p>FoodNow xin cảm ơn quý khách ❤️</p>
+
         </div>
+
       </main>
+
     </div>
 
-    <!-- 4. Scroll to top button -->
-    <button class="scroll-top">↑</button>
+    <!-- SCROLL BUTTON -->
+    <button class="scroll-top">
+      ↑
+    </button>
+
   </body>
 </html>
