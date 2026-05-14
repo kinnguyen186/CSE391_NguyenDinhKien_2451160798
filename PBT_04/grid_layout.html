@@ -3,135 +3,198 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Grid Layout — E-Commerce</title>
+    <title>FoodNow Grid Layout</title>
+
     <link rel="stylesheet" href="grid.css" />
   </head>
+
   <body>
+
     <div class="layout">
+
       <!-- HEADER -->
       <header class="header">
-        <strong>🛒 ShopDemo</strong>
-        <nav>
+
+        <div class="logo">
+          FoodNow 🍔
+        </div>
+
+        <nav class="menu">
           <a href="#">Trang chủ</a>
-          <a href="#">Sản phẩm</a>
+          <a href="#">Món ăn</a>
+          <a href="#">Khuyến mãi</a>
           <a href="#">Liên hệ</a>
         </nav>
+
       </header>
 
-      <!-- HERO BANNER -->
+      <!-- HERO -->
       <section class="hero">
-        <div class="hero__text">
-          <h1>Siêu sale tháng 5 🔥</h1>
-          <p>Giảm đến 50% cho tất cả sản phẩm</p>
-          <a href="#">Mua ngay</a>
+
+        <div class="hero-text">
+
+          <span class="tag">
+            Giảm giá 50%
+          </span>
+
+          <h1>
+            Đồ ăn ngon giao tận nơi
+          </h1>
+
+          <p>
+            Burger, pizza, sushi và hàng trăm món ăn hấp dẫn đang chờ bạn.
+          </p>
+
+          <button>
+            Đặt món ngay
+          </button>
+
         </div>
-        <!-- Card nổi bật: grid-column span 2 đã được dùng cho hero__text -->
-        <div class="hero__card">
-          <div class="emoji">📱</div>
-          <h3>iPhone 15 Pro Max</h3>
-          <div class="price">28.990.000đ</div>
+
+        <!-- CARD NỔI BẬT -->
+        <div class="hero-feature">
+
+          <div class="feature-img">
+            🍕
+          </div>
+
+          <h3>Pizza Hải Sản Đặc Biệt</h3>
+
+          <p class="feature-price">
+            189.000đ
+          </p>
+
         </div>
+
       </section>
 
       <!-- SIDEBAR -->
       <aside class="sidebar">
-        <h3>Bộ lọc</h3>
-        <div class="filter-group">
+
+        <h2>Bộ lọc</h2>
+
+        <div class="filter-box">
+
           <h4>Danh mục</h4>
-          <label><input type="checkbox" checked /> Điện thoại</label>
-          <label><input type="checkbox" checked /> Laptop</label>
-          <label><input type="checkbox" /> Đồng hồ</label>
-          <label><input type="checkbox" /> Phụ kiện</label>
+
+          <label><input type="checkbox" checked /> Pizza</label>
+          <label><input type="checkbox" checked /> Burger</label>
+          <label><input type="checkbox" /> Sushi</label>
+          <label><input type="checkbox" /> Trà sữa</label>
+
         </div>
-        <div class="filter-group">
-          <h4>Giá</h4>
-          <label><input type="checkbox" /> Dưới 5 triệu</label>
-          <label><input type="checkbox" checked /> 5 – 20 triệu</label>
-          <label><input type="checkbox" /> Trên 20 triệu</label>
+
+        <div class="filter-box">
+
+          <h4>Mức giá</h4>
+
+          <label><input type="checkbox" /> Dưới 100k</label>
+          <label><input type="checkbox" checked /> 100k - 300k</label>
+          <label><input type="checkbox" /> Trên 300k</label>
+
         </div>
-        <div class="filter-group">
-          <h4>Thương hiệu</h4>
-          <label><input type="checkbox" checked /> Apple</label>
-          <label><input type="checkbox" /> Samsung</label>
-          <label><input type="checkbox" /> Sony</label>
-        </div>
+
       </aside>
 
-      <!-- MAIN CONTENT -->
+      <!-- MAIN -->
       <main class="main">
-        <h2>Sản phẩm</h2>
-        <div class="product-grid">
-          <div class="card">
-            <div class="card__img">📱</div>
-            <div class="card__body">
-              <div class="card__name">iPhone 15 Pro</div>
-              <div class="card__price">28.990.000đ</div>
-              <div class="card__btn"><button>Mua ngay</button></div>
-            </div>
-          </div>
 
-          <div class="card">
-            <div class="card__img">💻</div>
-            <div class="card__body">
-              <div class="card__name">MacBook Air M3</div>
-              <div class="card__price">32.990.000đ</div>
-              <div class="card__btn"><button>Mua ngay</button></div>
-            </div>
-          </div>
+        <div class="main-title">
 
-          <div class="card">
-            <div class="card__img">🎧</div>
-            <div class="card__body">
-              <div class="card__name">AirPods Pro</div>
-              <div class="card__price">6.490.000đ</div>
-              <div class="card__btn"><button>Mua ngay</button></div>
-            </div>
-          </div>
+          <h2>Món nổi bật hôm nay</h2>
 
-          <div class="card">
-            <div class="card__img">⌚</div>
-            <div class="card__body">
-              <div class="card__name">Apple Watch S9</div>
-              <div class="card__price">11.990.000đ</div>
-              <div class="card__btn"><button>Mua ngay</button></div>
-            </div>
-          </div>
+          <span>12 sản phẩm</span>
 
-          <div class="card">
-            <div class="card__img">📷</div>
-            <div class="card__body">
-              <div class="card__name">Sony A7 IV</div>
-              <div class="card__price">68.000.000đ</div>
-              <div class="card__btn"><button>Mua ngay</button></div>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card__img">🖥️</div>
-            <div class="card__body">
-              <div class="card__name">Dell Monitor 27"</div>
-              <div class="card__price">8.500.000đ</div>
-              <div class="card__btn"><button>Mua ngay</button></div>
-            </div>
-          </div>
         </div>
+
+        <div class="product-grid">
+
+          <div class="card">
+            <div class="card-img">🍔</div>
+            <div class="card-body">
+              <h3>Burger Bò Phô Mai</h3>
+              <p>129.000đ</p>
+              <button>Mua ngay</button>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-img">🍣</div>
+            <div class="card-body">
+              <h3>Sushi Cá Hồi</h3>
+              <p>219.000đ</p>
+              <button>Mua ngay</button>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-img">🍕</div>
+            <div class="card-body">
+              <h3>Pizza Pepperoni</h3>
+              <p>179.000đ</p>
+              <button>Mua ngay</button>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-img">🍜</div>
+            <div class="card-body">
+              <h3>Mì Ramen Nhật</h3>
+              <p>149.000đ</p>
+              <button>Mua ngay</button>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-img">🥤</div>
+            <div class="card-body">
+              <h3>Combo Trà Sữa</h3>
+              <p>79.000đ</p>
+              <button>Mua ngay</button>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-img">🍗</div>
+            <div class="card-body">
+              <h3>Gà Rán Giòn Cay</h3>
+              <p>159.000đ</p>
+              <button>Mua ngay</button>
+            </div>
+          </div>
+
+        </div>
+
       </main>
 
       <!-- ADS -->
       <aside class="ads">
-        <div class="ads__banner">
-          <img src="https://placehold.co/200x120?text=Quang+cao+1" alt="Quảng cáo 1" />
+
+        <div class="ads-card">
+          <h3>🔥 Voucher 50k</h3>
+          <p>Áp dụng cho đơn từ 299k</p>
         </div>
-        <div class="ads__banner">
-          <img src="https://placehold.co/200x120?text=Quang+cao+2" alt="Quảng cáo 2" />
+
+        <div class="ads-card">
+          <h3>🚀 Freeship</h3>
+          <p>Miễn phí giao hàng toàn quốc</p>
         </div>
-        <div class="ads__banner">
-          <img src="https://placehold.co/200x120?text=Quang+cao+3" alt="Quảng cáo 3" />
+
+        <div class="ads-card">
+          <h3>🎁 Combo tiết kiệm</h3>
+          <p>Giảm thêm 20% cuối tuần</p>
         </div>
+
       </aside>
 
       <!-- FOOTER -->
-      <footer class="footer">© 2025 ShopDemo. All rights reserved.</footer>
+      <footer class="footer">
+
+        <p>© 2026 FoodNow - Đồ ăn ngon mỗi ngày 🍔</p>
+
+      </footer>
+
     </div>
+
   </body>
 </html>
