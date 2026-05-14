@@ -1,157 +1,180 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-body {
-  font-family: sans-serif;
-  background: #f5f5f5;
+body{
+  font-family:Arial,sans-serif;
+  background:#f4f4f4;
 }
 
-/* ── Phần 1: Navbar ── */
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #1a1a2e;
-  padding: 0 24px;
-  height: 60px;
+/* NAVBAR */
+
+.navbar{
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  padding:20px 40px;
+
+  background:#111827;
 }
 
-.navbar__logo {
-  color: white;
-  font-weight: bold;
-  font-size: 20px;
-  text-decoration: none;
+.logo{
+  color:white;
+
+  text-decoration:none;
+
+  font-size:24px;
+
+  font-weight:bold;
 }
 
-.navbar__menu {
-  display: flex;
-  align-items: center;
-  gap: 32px;
-  list-style: none;
+.menu{
+  display:flex;
+
+  gap:30px;
+
+  list-style:none;
 }
 
-.navbar__menu a {
-  color: #ccc;
-  text-decoration: none;
-  padding-bottom: 2px;
-  border-bottom: 2px solid transparent;
-  transition:
-    color 0.2s,
-    border-color 0.2s;
+.menu a{
+  color:#ddd;
+
+  text-decoration:none;
+
+  transition:0.3s;
 }
 
-.navbar__menu a:hover {
-  color: white;
-  border-bottom-color: white;
+.menu a:hover{
+  color:#f59e0b;
+
+  text-decoration:underline;
 }
 
-.navbar__auth {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+.auth{
+  display:flex;
+
+  gap:10px;
 }
 
-.btn-login {
-  color: white;
-  text-decoration: none;
-  padding: 6px 16px;
-  border: 1px solid #555;
-  border-radius: 4px;
-  transition: background 0.2s;
+.auth a{
+  text-decoration:none;
+
+  padding:10px 16px;
+
+  border-radius:8px;
 }
 
-.btn-login:hover {
-  background: #333;
+.login{
+  border:1px solid #f59e0b;
+
+  color:#f59e0b;
 }
 
-.btn-register {
-  color: #1a1a2e;
-  background: white;
-  text-decoration: none;
-  padding: 6px 16px;
-  border-radius: 4px;
-  transition: background 0.2s;
+.register{
+  background:#f59e0b;
+
+  color:white;
 }
 
-.btn-register:hover {
-  background: #ddd;
+/* SECTION */
+
+.section{
+  max-width:1300px;
+
+  margin:40px auto;
+
+  padding:0 20px;
 }
 
-/* ── Phần 2: Product Cards Grid ── */
-.section {
-  padding: 32px 24px;
+.section h1{
+  margin-bottom:30px;
 }
 
-.card-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+/* GRID */
+
+.card-grid{
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:20px;
 }
 
-.card {
-  flex: 0 0 calc(25% - 20px);
-  background: white;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition:
-    transform 0.25s,
-    box-shadow 0.25s;
+/* CARD */
+
+.card{
+  flex:0 0 calc(25% - 20px);
+
+  background:white;
+
+  border-radius:14px;
+
+  overflow:hidden;
+
+  display:flex;
+
+  flex-direction:column;
+
+  transition:0.3s;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+.card:hover{
+  transform:translateY(-5px);
+
+  box-shadow:0 10px 20px rgba(0,0,0,0.15);
 }
 
-.card__img {
-  width: 100%;
-  height: 150px;
-  background: #e8e8e8;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 48px;
+.img{
+  height:160px;
+
+  background:#fde68a;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  font-size:60px;
 }
 
-.card__body {
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
+.body{
+  padding:20px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  flex:1;
 }
 
-.card__name {
-  font-weight: bold;
-  margin-bottom: 6px;
+.body h2{
+  margin-bottom:10px;
 }
 
-.card__price {
-  color: #e53e3e;
+.body p{
+  color:red;
+
+  margin-bottom:20px;
 }
 
-.card__btn {
-  margin-top: auto;
-  padding-top: 16px;
-}
+.body button{
+  margin-top:auto;
 
-.card__btn button {
-  width: 100%;
-  padding: 10px;
-  background: #1a1a2e;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: background 0.2s;
-}
+  padding:12px;
 
-.card__btn button:hover {
-  background: #2d2d4e;
+  border:none;
+
+  border-radius:8px;
+
+  background:#111827;
+
+  color:white;
+
+  cursor:pointer;
 }
