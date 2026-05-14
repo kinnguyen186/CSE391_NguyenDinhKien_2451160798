@@ -2,7 +2,9 @@
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>FoodNow Flexbox</title>
 
     <link rel="stylesheet" href="flexbox.css" />
@@ -11,102 +13,263 @@
   <body>
 
     <!-- NAVBAR -->
+
     <nav class="navbar">
 
-      <a href="#" class="logo">
+      <a href="#" class="navbar__logo">
         FoodNow 🍔
       </a>
 
-      <ul class="menu">
+      <ul class="navbar__menu">
+
         <li><a href="#">Trang chủ</a></li>
+
         <li><a href="#">Món ăn</a></li>
+
         <li><a href="#">Khuyến mãi</a></li>
+
+        <li><a href="#">Liên hệ</a></li>
+
       </ul>
 
-      <div class="auth">
-        <a href="#" class="login">Đăng nhập</a>
-        <a href="#" class="register">Đăng ký</a>
+      <div class="navbar__auth">
+
+        <a href="#" class="btn-login">
+          Đăng nhập
+        </a>
+
+        <a href="#" class="btn-register">
+          Đăng ký
+        </a>
+
       </div>
 
     </nav>
 
-    <!-- PRODUCT GRID -->
+    <!-- SECTION -->
+
     <section class="section">
 
-      <h1>Món ăn nổi bật 🔥</h1>
+      <div class="section-title">
+
+        <h1>Món ăn nổi bật hôm nay 🍕</h1>
+
+        <p>
+          Đặt món nhanh chóng với hàng trăm ưu đãi hấp dẫn.
+        </p>
+
+      </div>
+
+      <!-- CARD GRID -->
 
       <div class="card-grid">
 
-        <div class="card">
-          <div class="img">🍕</div>
-          <div class="body">
-            <h2>Pizza</h2>
-            <p>189.000đ</p>
-            <button>Đặt món</button>
-          </div>
-        </div>
+        <!-- CARD -->
 
         <div class="card">
-          <div class="img">🍔</div>
-          <div class="body">
-            <h2>Burger</h2>
-            <p>99.000đ</p>
-            <button>Đặt món</button>
+
+          <div class="card__img">
+            🍕
           </div>
+
+          <div class="card__body">
+
+            <div class="card__name">
+              Pizza Hải Sản
+            </div>
+
+            <div class="card__price">
+              189.000đ
+            </div>
+
+            <div class="card__btn">
+              <button>Đặt món</button>
+            </div>
+
+          </div>
+
         </div>
 
-        <div class="card">
-          <div class="img">🍣</div>
-          <div class="body">
-            <h2>Sushi</h2>
-            <p>220.000đ</p>
-            <button>Đặt món</button>
-          </div>
-        </div>
+        <!-- CARD -->
 
         <div class="card">
-          <div class="img">🍜</div>
-          <div class="body">
-            <h2>Ramen</h2>
-            <p>145.000đ</p>
-            <button>Đặt món</button>
+
+          <div class="card__img">
+            🍔
           </div>
+
+          <div class="card__body">
+
+            <div class="card__name">
+              Burger Bò Phô Mai
+            </div>
+
+            <div class="card__price">
+              129.000đ
+            </div>
+
+            <div class="card__btn">
+              <button>Đặt món</button>
+            </div>
+
+          </div>
+
         </div>
 
-        <div class="card">
-          <div class="img">🍗</div>
-          <div class="body">
-            <h2>Gà rán</h2>
-            <p>129.000đ</p>
-            <button>Đặt món</button>
-          </div>
-        </div>
+        <!-- CARD -->
 
         <div class="card">
-          <div class="img">🥗</div>
-          <div class="body">
-            <h2>Salad</h2>
-            <p>75.000đ</p>
-            <button>Đặt món</button>
+
+          <div class="card__img">
+            🍣
           </div>
+
+          <div class="card__body">
+
+            <div class="card__name">
+              Sushi Cá Hồi
+            </div>
+
+            <div class="card__price">
+              219.000đ
+            </div>
+
+            <div class="card__btn">
+              <button>Đặt món</button>
+            </div>
+
+          </div>
+
         </div>
 
-        <div class="card">
-          <div class="img">🧋</div>
-          <div class="body">
-            <h2>Trà sữa</h2>
-            <p>55.000đ</p>
-            <button>Đặt món</button>
-          </div>
-        </div>
+        <!-- CARD -->
 
         <div class="card">
-          <div class="img">🍰</div>
-          <div class="body">
-            <h2>Bánh ngọt</h2>
-            <p>69.000đ</p>
-            <button>Đặt món</button>
+
+          <div class="card__img">
+            🍜
           </div>
+
+          <div class="card__body">
+
+            <div class="card__name">
+              Mì Ramen Nhật
+            </div>
+
+            <div class="card__price">
+              149.000đ
+            </div>
+
+            <div class="card__btn">
+              <button>Đặt món</button>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- CARD -->
+
+        <div class="card">
+
+          <div class="card__img">
+            🍗
+          </div>
+
+          <div class="card__body">
+
+            <div class="card__name">
+              Gà Rán Giòn Cay
+            </div>
+
+            <div class="card__price">
+              159.000đ
+            </div>
+
+            <div class="card__btn">
+              <button>Đặt món</button>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- CARD -->
+
+        <div class="card">
+
+          <div class="card__img">
+            🥤
+          </div>
+
+          <div class="card__body">
+
+            <div class="card__name">
+              Trà Sữa Matcha
+            </div>
+
+            <div class="card__price">
+              59.000đ
+            </div>
+
+            <div class="card__btn">
+              <button>Đặt món</button>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- CARD -->
+
+        <div class="card">
+
+          <div class="card__img">
+            🌮
+          </div>
+
+          <div class="card__body">
+
+            <div class="card__name">
+              Taco Mexico
+            </div>
+
+            <div class="card__price">
+              139.000đ
+            </div>
+
+            <div class="card__btn">
+              <button>Đặt món</button>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- CARD -->
+
+        <div class="card">
+
+          <div class="card__img">
+            🍰
+          </div>
+
+          <div class="card__body">
+
+            <div class="card__name">
+              Bánh Kem Dâu
+            </div>
+
+            <div class="card__price">
+              89.000đ
+            </div>
+
+            <div class="card__btn">
+              <button>Đặt món</button>
+            </div>
+
+          </div>
+
         </div>
 
       </div>
