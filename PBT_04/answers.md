@@ -2,279 +2,347 @@
 
 ## Câu A1 — 5 Loại Positioning
 
-| Position   | Vẫn chiếm chỗ trong flow? | Tham chiếu vị trí                        | Cuộn theo trang?                        | Use case                                  |
+| Position | Vẫn chiếm chỗ trong flow? | Tham chiếu vị trí | Cuộn theo trang? | Use case |
 | ---------- | ------------------------- | ---------------------------------------- | --------------------------------------- | ----------------------------------------- |
-| `static`   | Có                        | Không dùng top/left/bottom/right         | Có                                      | Mặc định, không cần can thiệp             |
-| `relative` | Có                        | Vị trí gốc của chính nó                  | Có                                      | Dịch chuyển nhẹ, làm mốc cho absolute con |
-| `absolute` | Không                     | Thẻ cha gần nhất có position khác static | Có (cuộn cùng cha)                      | Badge trên icon, dropdown, tooltip        |
-| `fixed`    | Không                     | Cửa sổ trình duyệt                       | Không — luôn dính tại chỗ               | Chat button, modal overlay                |
-| `sticky`   | Có → Không (khi dính)     | Cửa sổ trình duyệt (sau khi đạt ngưỡng)  | Có → Không (dính khi scroll đến ngưỡng) | Sticky header, sidebar                    |
+| `static` | Có | Theo flow mặc định của tài liệu HTML | Có | Layout thông thường |
+| `relative` | Có | So với vị trí gốc của chính nó | Có | Dịch chuyển element nhẹ, làm mốc cho absolute |
+| `absolute` | Không | Thẻ cha gần nhất có `position` khác `static` | Có | Badge, tooltip, dropdown |
+| `fixed` | Không | Viewport của trình duyệt | Không | Header cố định, nút chat |
+| `sticky` | Có | Theo flow cho đến khi đạt ngưỡng `top` | Có → Không khi sticky hoạt động | Sticky menu, sticky sidebar |
 
-- `position: absolute` sẽ tự leo lên cây HTML để tìm thẻ cha gần nhất có `position` khác `static`. Nếu tìm thấy thì dùng thẻ đó làm gốc tính tọa độ. Nếu leo hết lên mà không thấy thì tính từ body.
-- Nearest positioned ancestor" là thẻ cha gần nhất có khai báo `position` khác `static`.
+### Giải thích thêm
+
+`position: absolute` sẽ tự tìm phần tử cha gần nhất có:
+- `position: relative`
+- `position: absolute`
+- `position: fixed`
+- `position: sticky`
+
+để dùng làm gốc tính tọa độ.
+
+Nếu không tìm thấy phần tử phù hợp thì nó sẽ lấy `body` hoặc viewport làm mốc.
+
+**Nearest positioned ancestor** là phần tử cha gần nhất có `position` khác `static`.
+
+---
 
 ## Câu A2 — Flexbox vs Grid
 
-1. Trường hợp 1
+### Trường hợp 1
 
 ```css
 .container {
-  display: flex;
+    display: flex;
 }
+
 .item {
-  flex: 1;
+    flex: 1;
 }
+
 /* 4 items */
 ```
 
-```
-┌─────────────────────────────────────────────────────┐
-│  CONTAINER (100% width)                             │
-│ ┌──────────┬──────────┬──────────┬──────────┐       │
-│ │  Item 1  │  Item 2  │  Item 3  │  Item 4  │       │
-│ │  (25%)   │  (25%)   │  (25%)   │  (25%)   │       │
-│ └──────────┴──────────┴──────────┴──────────┘       │
-└─────────────────────────────────────────────────────┘
+### Bố cục
+
+```text
+| Item 1 | Item 2 | Item 3 | Item 4 |
 ```
 
-Giải thích:
+### Giải thích
 
-- `display: flex` → các item xếp thành 1 hàng ngang (mặc định `flex-direction: row`)
-- `flex: 1` = `flex-grow: 1; flex-shrink: 1; flex-basis: 0%`
-- Cả 4 item cùng `flex: 1` → chia đều container theo chiều ngang
+- `display: flex` mặc định xếp item theo chiều ngang
+- `flex: 1` giúp các item chia đều chiều rộng
+- 4 items → mỗi item chiếm khoảng 25%
 
-2. Trường hợp 2
+---
+
+### Trường hợp 2
 
 ```css
 .container {
-  display: flex;
-  flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
 }
+
 .item {
-  width: 45%;
-  margin: 2.5%;
+    width: 45%;
+    margin: 2.5%;
 }
+
 /* 6 items */
 ```
 
-```
-┌─────────────────────────────────────────────────────┐
-│  CONTAINER                                          │
-│  ┌───────────────┐  ┌───────────────┐               │
-│  │    Item 1     │  │    Item 2     │               │
-│  │  (45% + 5%m)  │  │  (45% + 5%m)  │               │
-│  └───────────────┘  └───────────────┘               │
-│  ┌───────────────┐  ┌───────────────┐               │
-│  │    Item 3     │  │    Item 4     │               │
-│  └───────────────┘  └───────────────┘               │
-│  ┌───────────────┐  ┌───────────────┐               │
-│  │    Item 5     │  │    Item 6     │               │
-│  └───────────────┘  └───────────────┘               │
-└─────────────────────────────────────────────────────┘
+### Bố cục
+
+```text
+| Item 1 | Item 2 |
+| Item 3 | Item 4 |
+| Item 5 | Item 6 |
 ```
 
-Giải thích:
+### Giải thích
 
-- Mỗi item chiếm: `width 45% + margin-left 2.5% + margin-right 2.5%` = 50% tổng chiều ngang
-- `flex-wrap: wrap` → khi không đủ chỗ, item xuống hàng
-- 100% ÷ 50% = 2 item mỗi hàng
-- 6 items ÷ 2 = 3 hàng
+- Mỗi item chiếm khoảng 50% chiều ngang tính cả margin
+- `flex-wrap: wrap` cho phép item xuống dòng
+- 6 items → 3 hàng, mỗi hàng 2 item
 
-3. Trường hợp 3
+---
+
+### Trường hợp 3
 
 ```css
 .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
 /* 3 items */
 ```
 
-```
-┌─────────────────────────────────────────────────────┐
-│  CONTAINER                                          │
-│                                                     │
-│  ┌────────┐          ┌────────┐          ┌────────┐ │
-│  │ Item 1 │          │ Item 2 │          │ Item 3 │ │
-│  └────────┘          └────────┘          └────────┘ │
-│    (trái)             (giữa)               (phải)   │
-│                                                     │
-└─────────────────────────────────────────────────────┘
-     ↑                    ↑                    ↑
-  sát trái          căn giữa ngang          sát phải
-  (cả 3 đều căn giữa dọc nhờ align-items: center)
+### Bố cục
+
+```text
+Item 1                Item 2                Item 3
 ```
 
-Giải thích:
+### Giải thích
 
-- `justify-content: space-between` → item đầu sát trái, item cuối sát phải, item giữa chính giữa, khoảng cách đều nhau giữa các items
-- `align-items: center` → tất cả items căn giữa theo chiều dọc
+- `space-between`:
+  - item đầu sát trái
+  - item cuối sát phải
+  - khoảng cách giữa các item bằng nhau
 
-4. Trường hợp 4
+- `align-items: center`
+→ căn giữa theo chiều dọc
+
+---
+
+### Trường hợp 4
 
 ```css
 .container {
-  display: grid;
-  grid-template-columns: 200px 1fr 200px;
-  gap: 20px;
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;
+    gap: 20px;
 }
+
 /* 3 items */
 ```
 
-```
-┌─────────────────────────────────────────────────────┐
-│  CONTAINER (ví dụ 1000px)                           │
-│                                                     │
-│ ┌──────────┐ ┌──────────────────────┐ ┌──────────┐  │
-│ │          │ │                      │ │          │  │
-│ │  Item 1  │ │       Item 2         │ │  Item 3  │  │
-│ │  200px   │ │   1fr (linh động)    │ │  200px   │  │
-│ │          │ │                      │ │          │  │
-│ └──────────┘ └──────────────────────┘ └──────────┘  │
-│   ← 200px →  ←────── ~560px ────────→  ← 200px →    │
-│              (gap 20px giữa mỗi cột)                │
-└─────────────────────────────────────────────────────┘
+### Bố cục
+
+```text
+| Sidebar | Main Content | Ads |
 ```
 
-Giải thích:
+### Giải thích
 
-- Cột 1: cố định 200px
-- Cột 2: `1fr` = chiếm toàn bộ phần còn lại sau khi trừ 200px + 200px + 2 khoảng gap
-- Cột 3: cố định 200px
-- Tính width cột giữa (giả sử container = 1000px):`1fr = 1000px - 200px - 200px - (20px × 2) = 560px`
+- Cột trái: 200px cố định
+- Cột giữa: `1fr` co giãn
+- Cột phải: 200px cố định
+- `gap: 20px` tạo khoảng cách giữa các cột
 
-5. Trường hợp 5
+---
+
+### Trường hợp 5
 
 ```css
 .container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
 }
+
 /* 7 items */
 ```
 
-```
-┌─────────────────────────────────────────────────────┐
-│  CONTAINER                                          │
-│                                                     │
-│ ┌─────────────┐ ┌─────────────┐ ┌─────────────┐     │
-│ │   Item 1    │ │   Item 2    │ │   Item 3    │     │
-│ └─────────────┘ └─────────────┘ └─────────────┘     │
-│ ┌─────────────┐ ┌─────────────┐ ┌─────────────┐     │
-│ │   Item 4    │ │   Item 5    │ │   Item 6    │     │
-│ └─────────────┘ └─────────────┘ └─────────────┘     │
-│ ┌─────────────┐                                     │
-│ │   Item 7    │   (trống)          (trống)          │
-│ └─────────────┘                                     │
-│   ← 1fr →       ← 1fr →           ← 1fr →           │
-│                                                     │
-└─────────────────────────────────────────────────────┘
+### Bố cục
+
+```text
+| 1 | 2 | 3 |
+| 4 | 5 | 6 |
+| 7 |
 ```
 
-Giải thích:
+### Giải thích
 
-- `repeat(3, 1fr)` → 3 cột đều nhau
-- 7 items ÷ 3 cột = 2 hàng đầy + 1 hàng thiếu
-- Hàng 1: Item 1, 2, 3
-- Hàng 2: Item 4, 5, 6
-- Hàng 3: Item 7 — chỉ có 1 item, nằm ở cột đầu tiên (trái)
-- Item 7 không tự kéo rộng ra để lấp đầy — nó giữ nguyên kích thước `1fr` của cột
+- Grid có 3 cột bằng nhau
+- 7 items:
+  - hàng 1: 1 2 3
+  - hàng 2: 4 5 6
+  - hàng 3: item 7 nằm ở cột đầu tiên
+
+---
 
 # Phần C: Suy luận
 
 ## Câu C1 — Flexbox vs Grid: Khi nào dùng gì?
 
-1. Navigation bar ngang (logo + menu + buttons)
+### 1. Navigation bar ngang (logo + menu + buttons)
 
-- Dùng: Flexbox
-- Navbar là 1 chiều — các item xếp ngang theo trục X. Flexbox sinh ra để xử lý đúng kiểu này: `justify-content: space-between` đẩy logo trái, menu giữa, buttons phải. `align-items: center` căn giữa dọc hoàn hảo chỉ 1 dòng
+- Dùng: **Flexbox**
 
-2. Lưới ảnh Instagram (3 cột đều nhau, số ảnh không biết trước)
+Navbar là layout theo một chiều ngang nên Flexbox phù hợp nhất.
 
-- Dùng: Grid
-- Cần layout 2 chiều rõ ràng — 3 cột cố định, ảnh tự động xuống hàng. `grid-template-columns: repeat(3, 1fr)` xử lý gọn, không cần biết có bao nhiêu ảnh. Flexbox cũng làm được nhưng phải tính `calc()` thủ công, dễ lệch.
+Có thể dùng:
 
-3. Layout blog: main content + sidebar
+```css
+justify-content: space-between;
+align-items: center;
+```
 
-- Dùng: Grid
-- Đây là layout 2 vùng rõ ràng với kích thước khác nhau, ví dụ `grid-template-columns: 1fr 300px`. Grid kiểm soát tỷ lệ 2 cột chính xác hơn, dễ responsive hơn khi dùng `minmax()`.
+để căn ngang và căn dọc dễ dàng.
 
-4. Footer với 4 cột thông tin (Về chúng tôi, Liên kết, Hỗ trợ, Liên hệ)
+---
 
-- Dùng: Grid hoặc Flexbox — cả hai đều được
-- Nếu 4 cột đều nhau: Flexbox với `flex: 1` đơn giản hơn. Nếu cần kiểm soát từng cột khác nhau (cột 1 rộng hơn, cột 4 hẹp hơn): Grid rõ ràng hơn. Thực tế dùng Grid cho chắc vì dễ responsive sau này.
+### 2. Lưới ảnh Instagram (3 cột đều nhau, số ảnh không biết trước)
 
-5. Card sản phẩm (ảnh trên, text giữa, nút dưới — nút luôn dính đáy)
+- Dùng: **Grid**
 
-- Dùng: Flexbox
-- Card là layout 1 chiều theo trục dọc — `flex-direction: column`. Trick quan trọng: `margin-top: auto` trên nút "Mua" đẩy nút xuống đáy card bất kể nội dung text dài hay ngắn. Grid không có cách xử lý tự nhiên cho trick này.
+Đây là layout dạng lưới nhiều hàng nhiều cột.
+
+Ví dụ:
+
+```css
+grid-template-columns: repeat(3, 1fr);
+```
+
+Grid giúp chia cột đều và tự động xuống hàng thuận tiện hơn.
+
+---
+
+### 3. Layout blog: main content + sidebar
+
+- Dùng: **Grid**
+
+Layout có nhiều vùng rõ ràng:
+- content chính
+- sidebar
+
+Grid giúp chia cột chính xác và responsive dễ hơn.
+
+---
+
+### 4. Footer với 4 cột thông tin (Về chúng tôi, Liên kết, Hỗ trợ, Liên hệ)
+
+- Dùng: **Grid hoặc Flexbox**
+
+Nếu các cột bằng nhau thì Flexbox là đủ.
+
+Nếu cần kiểm soát kích thước từng cột thì Grid phù hợp hơn.
+
+---
+
+### 5. Card sản phẩm (ảnh trên, text giữa, nút dưới — nút luôn dính đáy)
+
+- Dùng: **Flexbox**
+
+Card là layout theo chiều dọc nên Flexbox rất phù hợp.
+
+Ví dụ:
+
+```css
+flex-direction: column;
+```
+
+Kết hợp:
+
+```css
+margin-top: auto;
+```
+
+để đẩy nút xuống đáy card.
+
+---
 
 ## Câu C2 — Debug Flexbox
 
-1. Lỗi 1: Cards không đều chiều cao — nút "Mua" bị nhảy lên/xuống
+### Lỗi 1: Cards không đều chiều cao — nút "Mua" bị nhảy lên/xuống
 
-- Nguyên nhân: card không có `display: flex; flex-direction: column` nên các phần tử bên trong xếp bình thường, nút không có cách để dính đáy.
-- Sửa:
+### Nguyên nhân
+
+Card chưa dùng Flexbox theo chiều dọc nên:
+- chiều cao mỗi card khác nhau
+- nút không nằm cố định dưới đáy
+
+### Code sửa
 
 ```css
 .card-container {
-  display: flex;
-  flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
 }
+
 .card {
-  width: 30%;
-  margin: 1.5%;
-  display: flex; /* thêm */
-  flex-direction: column; /* thêm */
+    width: 30%;
+    margin: 1.5%;
+
+    display: flex;
+    flex-direction: column;
 }
-.card img {
-  width: 100%;
-}
-.card h3 {
-  font-size: 18px;
-}
+
 .card .btn {
-  padding: 10px;
-  margin-top: auto; /* thêm — đẩy nút xuống đáy */
+    padding: 10px;
+    margin-top: auto;
 }
 ```
 
-2. Lỗi 2: Muốn items nằm giữa cả ngang lẫn dọc trong container 100vh, nhưng item vẫn dính góc trái trên
+---
 
-- Nguyên nhân: `display: flex` tạo flex container nhưng không có `justify-content` và `align-items` nên mặc định là `flex-start` — tức góc trái trên.
+### Lỗi 2: Muốn items nằm giữa cả ngang lẫn dọc trong container 100vh, nhưng item vẫn dính góc trái trên
 
-- Sửa:
+### Nguyên nhân
+
+Container có `display: flex` nhưng chưa có:
+- `justify-content`
+- `align-items`
+
+nên mặc định item nằm ở góc trên bên trái.
+
+### Code sửa
 
 ```css
 .hero {
-  height: 100vh;
-  display: flex;
-  justify-content: center; /* thêm — căn giữa ngang */
-  align-items: center; /* thêm — căn giữa dọc */
+    height: 100vh;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
 }
+
 .hero-content {
-  text-align: center;
+    text-align: center;
 }
 ```
 
-3. Lỗi 3: Sidebar bị co lại khi content quá dài
+---
 
-- Nguyên nhân: Flexbox mặc định cho phép các item co lại (`flex-shrink: 1`). Khi content dài, flex container cố chia đều chỗ, sidebar bị ép nhỏ hơn 250px.
+### Lỗi 3: Sidebar bị co lại khi content quá dài
 
-- phSửa:
+### Nguyên nhân
+
+Flexbox mặc định cho phép item co lại:
+
+```css
+flex-shrink: 1;
+```
+
+nên sidebar bị ép nhỏ khi content quá dài.
+
+### Code sửa
 
 ```css
 .layout {
-  display: flex;
+    display: flex;
 }
+
 .sidebar {
-  width: 250px;
-  flex-shrink: 0; /* thêm — không cho co lại */
+    width: 250px;
+    flex-shrink: 0;
 }
+
 .content {
-  flex: 1;
+    flex: 1;
 }
 ```
-
