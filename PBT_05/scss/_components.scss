@@ -1,0 +1,55 @@
+.header {
+
+  background: $primary-color;
+  color: white;
+  padding: $spacing-md;
+
+  @include flex-center;
+}
+
+.products {
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-md;
+
+  @include respond-to(tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond-to(desktop) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.card {
+
+  padding: $spacing-md;
+  border-radius: 10px;
+
+  @include card-shadow;
+
+  .card-image img {
+    width: 100%;
+  }
+
+  .card-title {
+    margin: $spacing-sm 0;
+  }
+
+  &:hover {
+    transform: translateY(-8px);
+  }
+
+  &.featured {
+    border: 2px solid gold;
+  }
+}
+
+.footer {
+
+  background: $primary-color;
+  color: white;
+  padding: $spacing-md;
+  text-align: center;
+}
