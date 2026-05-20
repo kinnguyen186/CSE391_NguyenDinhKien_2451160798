@@ -1,0 +1,112 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  background: #f6f7fb;
+  text-align: center;
+}
+
+/* TITLE */
+.title {
+  margin: 20px 0;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  padding: 20px;
+}
+
+/* CARD */
+.card {
+  background: white;
+  border-radius: 10px;
+  padding: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+/* 1. CARD HOVER */
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* IMAGE */
+.img-box {
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.img-box img {
+  width: 100%;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+/* 3. IMAGE ZOOM */
+.img-box img:hover {
+  transform: scale(1.1);
+}
+
+/* PRICE */
+.price {
+  color: #10b981;
+  font-weight: bold;
+  margin: 8px 0;
+}
+
+/* BUTTON */
+button {
+  margin-top: 10px;
+  padding: 8px 12px;
+  border: none;
+  background: #10b981;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* 2. BUTTON HOVER */
+button:hover {
+  background: #0ea371;
+  transform: scale(1.05);
+}
+
+/* SPINNER */
+.spinner {
+  width: 40px;
+  height: 40px;
+  margin: 20px auto;
+  border: 4px solid #ddd;
+  border-top: 4px solid #10b981;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0); }
+  100% { transform: rotate(360deg); }
+}
+
+/* FADE IN (FIX KHÔNG BỤP + CÓ DELAY) */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.6s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
