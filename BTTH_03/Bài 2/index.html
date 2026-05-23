@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Quản Lý Công Việc</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>Quản Lý Công Việc</h1>
+
+    <div class="top-bar">
+
+      <button id="openModalBtn">
+        + Thêm Công Việc
+      </button>
+
+    </div>
+
+    <!-- Stats -->
+
+    <div class="stats-line">
+
+      <span>
+        Tổng:
+        <b id="totalTasks">0</b>
+      </span>
+
+      <span>
+        Hoàn thành:
+        <b id="completedTasks">0</b>
+      </span>
+
+      <span>
+        Chưa hoàn thành:
+        <b id="pendingTasks">0</b>
+      </span>
+
+    </div>
+
+    <!-- Table -->
+
+    <table>
+
+      <thead>
+
+        <tr>
+          <th>Tên công việc</th>
+          <th>Mô tả</th>
+          <th>Hạn hoàn thành</th>
+          <th>Ưu tiên</th>
+          <th>Trạng thái</th>
+          <th>Thao tác</th>
+        </tr>
+
+      </thead>
+
+      <tbody id="taskList"></tbody>
+
+    </table>
+
+  </div>
+
+  <!-- MODAL -->
+
+  <div class="modal" id="taskModal">
+
+    <div class="modal-content">
+
+      <h2 id="modalTitle">
+        Thêm Công Việc
+      </h2>
+
+      <form id="taskForm">
+
+        <input
+          type="hidden"
+          id="editTaskIndex"
+        >
+
+        <!-- Tên -->
+
+        <div>
+
+          <label>
+            Tên công việc
+          </label>
+
+          <input
+            type="text"
+            id="taskTitle"
+            placeholder="VD: Làm bài tập JS"
+          >
+
+          <small
+            id="taskTitleError"
+            class="error"
+          ></small>
+
+        </div>
+
+        <!-- Mô tả -->
+
+        <div>
+
+          <label>
+            Mô tả công việc
+          </label>
+
+          <textarea
+            id="taskDesc"
+            placeholder="Nhập mô tả công việc (Không bắt buộc)"
+          ></textarea>
+
+        </div>
+
+        <!-- Deadline -->
+
+        <div>
+
+          <label>
+            Hạn hoàn thành
+          </label>
+
+          <input
+            type="date"
+            id="taskDeadline"
+          >
+
+          <small
+            id="taskDeadlineError"
+            class="error"
+          ></small>
+
+        </div>
+
+        <!-- Ưu tiên -->
+
+        <div>
+
+          <label>
+            Mức ưu tiên
+          </label>
+
+          <select id="taskPriority">
+
+            <option value="">
+              -- Chọn mức ưu tiên --
+            </option>
+
+            <option value="Thấp">
+              Thấp
+            </option>
+
+            <option value="Trung bình">
+              Trung bình
+            </option>
+
+            <option value="Cao">
+              Cao
+            </option>
+
+          </select>
+
+          <small
+            id="taskPriorityError"
+            class="error"
+          ></small>
+
+        </div>
+
+        <!-- Trạng thái -->
+
+        <div>
+
+          <label>
+            Trạng thái
+          </label>
+
+          <select id="taskStatus">
+
+            <option value="">
+              -- Chọn trạng thái --
+            </option>
+
+            <option value="Chưa hoàn thành">
+              Chưa hoàn thành
+            </option>
+
+            <option value="Hoàn thành">
+              Hoàn thành
+            </option>
+
+          </select>
+
+          <small
+            id="taskStatusError"
+            class="error"
+          ></small>
+
+        </div>
+
+        <!-- Buttons -->
+
+        <div class="actions">
+
+          <button type="submit">
+            Lưu
+          </button>
+
+          <button
+            type="button"
+            id="closeModalBtn"
+          >
+            Hủy
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+
+</body>
+</html>
