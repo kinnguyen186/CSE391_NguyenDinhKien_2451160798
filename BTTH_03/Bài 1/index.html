@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Quản Lý Sinh Viên</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <h1>Quản Lý Sinh Viên</h1>
+
+    <div class="top-bar">
+
+      <button id="addBtn">
+        + Thêm Sinh Viên
+      </button>
+
+    </div>
+
+    <!-- Stats -->
+
+    <div class="stats-line">
+
+      <span>
+        Tổng sinh viên:
+        <b id="totalStudents">0</b>
+      </span>
+
+      <span>
+        Điểm trung bình:
+        <b id="avgScore">0</b>
+      </span>
+
+    </div>
+
+    <!-- Table -->
+
+    <table>
+
+      <thead>
+
+        <tr>
+          <th>Mã SV</th>
+          <th>Họ và tên</th>
+          <th>Ngày sinh</th>
+          <th>Lớp</th>
+          <th>Điểm</th>
+          <th>Email</th>
+          <th>Thao tác</th>
+        </tr>
+
+      </thead>
+
+      <tbody id="studentList"></tbody>
+
+    </table>
+
+  </div>
+
+  <!-- Modal -->
+
+  <div class="modal" id="studentModal">
+
+    <div class="modal-content">
+
+      <h2 id="formTitle">
+        Thêm Sinh Viên
+      </h2>
+
+      <form id="studentForm">
+
+        <input type="hidden" id="editIndex">
+
+        <div>
+
+          <label>
+            Mã sinh viên
+          </label>
+
+          <input
+            type="text"
+            id="studentId"
+            placeholder="VD: SV001"
+            required
+          >
+
+          <small
+            class="error"
+            id="studentIdError"
+          ></small>
+
+        </div>
+
+        <div>
+
+          <label>
+            Họ và tên
+          </label>
+
+          <input
+            type="text"
+            id="fullName"
+            placeholder="VD: Nguyễn Văn A"
+            required
+          >
+
+          <small
+            class="error"
+            id="fullNameError"
+          ></small>
+
+        </div>
+
+        <div>
+
+          <label>
+            Ngày sinh
+          </label>
+
+          <input
+            type="date"
+            id="birthDate"
+            required
+          >
+
+          <small
+            class="error"
+            id="birthDateError"
+          ></small>
+
+        </div>
+
+        <div>
+
+          <label>
+            Lớp
+          </label>
+
+          <input
+            type="text"
+            id="className"
+            placeholder="VD: CNTT1"
+            required
+          >
+
+          <small
+            class="error"
+            id="classNameError"
+          ></small>
+
+        </div>
+
+        <div>
+
+          <label>
+            Điểm trung bình
+          </label>
+
+          <input
+            type="number"
+            id="score"
+            placeholder="Nhập điểm từ 0 đến 10"
+            step="0.1"
+            required
+          >
+
+          <small
+            class="error"
+            id="scoreError"
+          ></small>
+
+        </div>
+
+        <div>
+
+          <label>
+            Email
+          </label>
+
+          <input
+            type="email"
+            id="email"
+            placeholder="VD: abc@gmail.com"
+            required
+          >
+
+          <small
+            class="error"
+            id="emailError"
+          ></small>
+
+        </div>
+
+        <div class="modal-actions">
+
+          <button type="submit">
+            Lưu
+          </button>
+
+          <button
+            type="button"
+            id="closeBtn"
+          >
+            Hủy
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+
+</body>
+</html>
