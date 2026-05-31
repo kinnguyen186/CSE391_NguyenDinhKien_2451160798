@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Đăng ký tài khoản</h1>
+
+    <form id="registerForm">
+
+        <input
+            type="text"
+            id="fullname"
+            placeholder="Họ và tên"
+        >
+        <small id="nameError"></small>
+
+        <input
+            type="email"
+            id="email"
+            placeholder="Email"
+        >
+        <small id="emailError"></small>
+
+        <input
+            type="password"
+            id="password"
+            placeholder="Mật khẩu"
+        >
+
+        <div class="strength">
+            <div id="strengthBar"></div>
+        </div>
+
+        <small id="passwordError"></small>
+
+        <input
+            type="password"
+            id="confirmPassword"
+            placeholder="Nhập lại mật khẩu"
+        >
+        <small id="confirmError"></small>
+
+        <input
+            type="text"
+            id="phone"
+            placeholder="Số điện thoại"
+        >
+        <small id="phoneError"></small>
+
+        <button
+            id="submitBtn"
+            disabled
+        >
+            Đăng ký
+        </button>
+
+    </form>
+
+</div>
+
+<div id="modal" class="modal hidden">
+
+    <div class="modal-content">
+
+        <h2>
+            Đăng ký thành công
+        </h2>
+
+        <div id="userInfo"></div>
+
+        <button id="closeModal">
+            Đóng
+        </button>
+
+    </div>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
