@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multi-API Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="top-bar">
+    <div class="top-left">
+      <h1>📊 Dashboard</h1>
+      <span id="loadTime" class="load-time"></span>
+    </div>
+    <button id="refreshBtn" onclick="loadDashboard()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+      Refresh All
+    </button>
+  </div>
+
+  <!-- Global loading overlay -->
+  <div id="globalLoading" class="global-loading hidden">
+    <div class="spinner"></div>
+    <span>Đang tải dữ liệu...</span>
+  </div>
+
+  <div class="widgets">
+    <!-- Widget 0: Users -->
+    <div class="widget" id="widget-0">
+      <div class="widget-header">
+        <div class="widget-title">
+          <span class="widget-icon">👥</span>
+          <span>Người dùng</span>
+        </div>
+        <span class="widget-source">JSONPlaceholder</span>
+      </div>
+      <div class="widget-body" id="wb-0">
+        <div class="widget-skeleton"></div>
+      </div>
+    </div>
+
+    <!-- Widget 1: Posts -->
+    <div class="widget" id="widget-1">
+      <div class="widget-header">
+        <div class="widget-title">
+          <span class="widget-icon">📝</span>
+          <span>Bài viết</span>
+        </div>
+        <span class="widget-source">JSONPlaceholder</span>
+      </div>
+      <div class="widget-body" id="wb-1">
+        <div class="widget-skeleton"></div>
+      </div>
+    </div>
+
+    <!-- Widget 2: Weather -->
+    <div class="widget" id="widget-2">
+      <div class="widget-header">
+        <div class="widget-title">
+          <span class="widget-icon">🌤</span>
+          <span>Thời tiết Hà Nội</span>
+        </div>
+        <span class="widget-source">Open-Meteo</span>
+      </div>
+      <div class="widget-body" id="wb-2">
+        <div class="widget-skeleton"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
