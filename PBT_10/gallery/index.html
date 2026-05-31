@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photo Gallery</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Gallery</h1>
+    <span id="photoCount">0 ảnh</span>
+  </header>
+
+  <div class="grid" id="grid"></div>
+
+  <div id="loadingMore">
+    <div class="loader-dots">
+      <span></span><span></span><span></span>
+    </div>
+    <p>Đang tải thêm ảnh...</p>
+  </div>
+
+  <div id="load-trigger"></div>
+
+  <!-- Lightbox -->
+  <div id="lightbox" onclick="closeLightbox()">
+    <button id="closeBtn" onclick="closeLightbox()">✕</button>
+    <div class="lb-content" onclick="event.stopPropagation()">
+      <img id="lightboxImg" src="" alt="" />
+      <div class="lb-info">
+        <span id="lbAuthor"></span>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
