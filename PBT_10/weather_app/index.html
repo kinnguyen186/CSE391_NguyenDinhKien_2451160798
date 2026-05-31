@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <div class="header">
+      <h1>Sky<span>Check</span></h1>
+      <p class="subtitle">Tra cứu thời tiết tức thì</p>
+    </div>
+
+    <div class="search-wrap">
+      <input type="text" id="cityInput" placeholder="Nhập tên thành phố..." autocomplete="off" />
+      <button id="searchBtn" onclick="search()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        Tìm
+      </button>
+    </div>
+
+    <!-- State: Loading -->
+    <div id="stateLoading" class="state hidden">
+      <div class="spinner"></div>
+      <p>Đang tải dữ liệu thời tiết...</p>
+    </div>
+
+    <!-- State: Error -->
+    <div id="stateError" class="state hidden">
+      <div class="error-icon">⚠️</div>
+      <p id="errorMsg">Đã xảy ra lỗi</p>
+    </div>
+
+    <!-- State: Success -->
+    <div id="stateSuccess" class="state hidden">
+      <div class="weather-card">
+        <div class="weather-top">
+          <div>
+            <div class="city-name" id="cityName"></div>
+            <div class="weather-desc" id="desc"></div>
+          </div>
+          <div class="weather-icon" id="weatherIcon"></div>
+        </div>
+        <div class="temp-big" id="temp"></div>
+        <div class="weather-stats">
+          <div class="stat">
+            <span class="stat-label">Độ ẩm</span>
+            <span class="stat-value" id="humidity">—</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Tốc độ gió</span>
+            <span class="stat-value" id="wind">—</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Cảm giác như</span>
+            <span class="stat-value" id="feelsLike">—</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- History -->
+    <div id="historyWrap" class="history-wrap">
+      <p class="history-title">🕐 Tìm kiếm gần đây</p>
+      <div id="historyList"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
