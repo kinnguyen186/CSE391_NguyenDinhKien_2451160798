@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Keyboard App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="container">
+
+  <h1>Keyboard Gallery</h1>
+
+  <div class="gallery">
+
+    <img
+      id="galleryImage"
+      src="https://picsum.photos/id/1015/900/500"
+      alt="Gallery"
+    />
+
+    <div class="controls">
+      <button id="prevBtn">◀</button>
+      <button id="playBtn">Play</button>
+      <button id="nextBtn">▶</button>
+    </div>
+
+    <p class="hint">
+      ← → đổi ảnh · Space play/pause · Ctrl+K mở command · 1-9 chọn ảnh
+    </p>
+
+  </div>
+
+</div>
+
+<!-- Command Palette -->
+<div id="commandPalette" class="palette hidden">
+
+  <div class="box">
+
+    <input
+      id="commandInput"
+      placeholder="Nhập lệnh..."
+    />
+
+    <ul id="commandList"></ul>
+
+  </div>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
